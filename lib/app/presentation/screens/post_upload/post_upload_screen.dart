@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:tuto_http/app/presentation/widgets/post_single_bg.dart';
+import 'package:tuto_http/app/view_model/controllers/post_upload_controller.dart';
 
 class PostUploadScreen extends StatelessWidget {
   const PostUploadScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+
+   PostUploadController mPostUploadController = Get.find<PostUploadController>();
+
     TextEditingController mPostTextController = TextEditingController();
+
+    mPostTextController.addListener(() {
+      mPostUploadController.changingPostText(mPostTextController.text);
+    });
 
     return Scaffold(
       appBar: AppBar(
@@ -52,10 +62,15 @@ class PostUploadScreen extends StatelessWidget {
             SizedBox(
               height: 8.h,
             ),
-            ElevatedButton(
-                onPressed: () {},
+            Obx((){
+              return ElevatedButton(
+                onPressed: () {
+                  if(mPostUploadController.postText.value.isNotEmpty){
+           
+                  }
+                },
                 style: ElevatedButton.styleFrom(
-                  primary: Theme.of(context).primaryColor,
+                  primary: mPostUploadController.postText.value.isEmpty?Colors.grey:Theme.of(context).primaryColor,
                   onPrimary: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -63,7 +78,8 @@ class PostUploadScreen extends StatelessWidget {
                 ),
                 child: const Center(
                   child: Text('Upload'),
-                ))
+                ));
+            })
           ],
         )),
       ),
