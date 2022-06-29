@@ -7,6 +7,8 @@ class PostUploadScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController mPostTextController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Upload your new post.'),
@@ -34,14 +36,16 @@ class PostUploadScreen extends StatelessWidget {
             SizedBox(
               height: 8.h,
             ),
-            const TextField(
+            TextField(
               textAlign: TextAlign.left,
+              controller: mPostTextController,
               maxLines: 2,
-              decoration: InputDecoration(
+              autofocus: true,
+              decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: 'What is on your mind?',
                   hintStyle: TextStyle(color: Colors.grey)),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
               ),
             ),
@@ -49,9 +53,7 @@ class PostUploadScreen extends StatelessWidget {
               height: 8.h,
             ),
             ElevatedButton(
-                onPressed: () {
-                  
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   primary: Theme.of(context).primaryColor,
                   onPrimary: Colors.white,

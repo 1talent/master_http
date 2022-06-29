@@ -35,7 +35,7 @@ class MainScreen extends StatelessWidget {
             Get.toNamed(AppNames.postUploadScreen);
           }
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,color: Colors.white,),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const MainBottomNav(),
