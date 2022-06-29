@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
               useMaterial3: true,
+              primarySwatch: Colors.amber,
               scaffoldBackgroundColor: const Color(0xffF9F9F9)),
           getPages: App.screens,
         );

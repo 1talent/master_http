@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tuto_http/app/presentation/routes/app_screens.dart';
 import 'package:tuto_http/app/presentation/screens/account/account_screen.dart';
 import 'package:tuto_http/app/presentation/screens/post/post_screen.dart';
 import 'package:tuto_http/app/presentation/screens/main/main_bottom_nav.dart';
@@ -31,10 +32,10 @@ class MainScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (kDebugMode) {
-            print("pressed");
+            Get.toNamed(AppNames.postUploadScreen);
           }
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,color: Colors.white,),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const MainBottomNav(),
