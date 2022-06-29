@@ -14,7 +14,7 @@ class PostUploadScreen extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        height: 350.h,
+        height: 380.h,
         padding: EdgeInsets.symmetric(
           vertical: 10.w,
           horizontal: 30.w,
@@ -48,6 +48,20 @@ class PostUploadScreen extends StatelessWidget {
             SizedBox(
               height: 8.h,
             ),
+            ElevatedButton(
+                onPressed: () {
+                  
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Theme.of(context).primaryColor,
+                  onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Center(
+                  child: Text('Upload'),
+                ))
           ],
         )),
       ),
