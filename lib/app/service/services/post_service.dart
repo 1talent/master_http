@@ -18,8 +18,7 @@ class PostService {
         /// in here we can work with hive.
         return postData.mData;
       } else {
-        debugPrint("status code is ${postData.statusCode}"
-            "error message is ${postData.errorMsg}");
+        debugPrint("status code is ${postData.statusCode} error message is ${postData.errorMsg}");
       }
     } catch (e) {
       debugPrint(e.toString());

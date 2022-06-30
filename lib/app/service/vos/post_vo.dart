@@ -72,7 +72,7 @@ class Owner {
         firstName: json["firstName"],
         lastName: json["lastName"],
         title:json["title"]??"mr",
-        picture:json["picture"]??"https://pixabay.com/photos/little-girl-bike-ride-outdoors-7264330/",
+        picture:json["picture"]??"https://cdn.pixabay.com/photo/2022/06/15/17/14/little-girl-7264330_1280.jpg",
     );
 
     Map<String, dynamic> toJson() => {

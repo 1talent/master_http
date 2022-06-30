@@ -19,9 +19,10 @@ class PostRepoImpl implements PostRepo{
   Future<ApiResult<List<PostVo>>> fetchPostList() async {
     try{
       ApiResponse responseResult = await apiHelper.getData("post");
+    
       if(responseResult.status==Status.success){
       Map mapResult = jsonDecode(responseResult.mData);
-      List<PostVo> postResultList = postVoFromJson(mapResult['data']);
+      List<PostVo> postResultList = postVoFromJson(jsonEncode(mapResult["data"]));
       return ApiResult(mData: postResultList, status: Status.success,statusCode: responseResult.statusCode,errorMsg: "");
       }
       else{

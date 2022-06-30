@@ -24,7 +24,7 @@ class ApiHelper {
      return responseJson;
     }
     catch(e){
-      debugPrint(uri+e.toString());
+    debugPrint(uri+e.toString());
      return ApiResponse("Something Went Wrong", 404, "", Status.fail);
     }
    }
@@ -34,10 +34,10 @@ class ApiHelper {
     if (response != null) {
       switch (response.statusCode) {
         case 200:
-          var responseJson = response.data;
+          var responseJson = response.body;
           return ApiResponse("", 200, responseJson, Status.success);
         case 201:
-          var responseJson = response.data;
+          var responseJson = response.body;
           return ApiResponse("", 201, responseJson, Status.success);
         case 400:
         return ApiResponse("Bad Request Exception: ${response.statusMessage}", 400, "", Status.fail);
